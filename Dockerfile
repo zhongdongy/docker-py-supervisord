@@ -15,14 +15,9 @@ WORKDIR /app
 # ===
 # Add all locales and set en_US.utf8 as default
 # ===
-RUN apt-get -o "Acquire::https::Verify-Peer=false" \
-    -o "Acquire::AllowInsecureRepositories=true" \
-    -o "APT::Get::AllowUnauthenticated=true" update \
+RUN apt-get update \
   && apt-get -y install ca-certificates software-properties-common curl dos2unix
-COPY config/sources.list /etc/apt/sources.list
-COPY config/cert/deadsnakes /tmp/deadsnakes
-COPY config/deadsnakes-ubuntu-ppa-focal.list /etc/apt/sources.list.d/deadsnakes-ubuntu-ppa-focal.list
-RUN apt-key add /tmp/deadsnakes
+RUN add-apt-repository -y 'ppa:deadsnakes/ppa'
 RUN apt-get update && apt-get install -y locales apt-transport-https
 RUN rm -rf /var/lib/apt/lists/*
 RUN localedef -i en_US -c -f UTF-8 \
