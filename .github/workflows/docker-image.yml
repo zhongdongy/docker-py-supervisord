@@ -20,7 +20,7 @@ jobs:
           images: |
             dongsxyz/python-supervisord
           tags: |
-            type=ref
+            type=ref,event=branch
             type=sha
             type=semver,pattern={{version}}
       - name: Set up QEMU
