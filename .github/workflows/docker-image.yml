@@ -3,7 +3,7 @@ name: Build & Push to Docker Hub
 on:
   push:
     branches:
-      - '**'
+      - 'master'
     tags:
       - 'v*.*.*'
 
@@ -20,8 +20,9 @@ jobs:
           images: |
             dongsxyz/python-supervisord
           tags: |
-            type=ref,event=branch
+            type=ref,event=tag
             type=sha
+            type=raw,value=latest
             type=semver,pattern={{version}}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
