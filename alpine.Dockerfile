@@ -44,7 +44,5 @@ COPY script/startup.sh /app/startup.sh
 RUN mkdir -p /var/log/supervisord/
 RUN dos2unix /app/startup.sh
 RUN chmod +x /app/startup.sh
-RUN file /app/startup.sh
-RUN which bash
 WORKDIR /app
 CMD ["/bin/bash", "/app/startup.sh"]
