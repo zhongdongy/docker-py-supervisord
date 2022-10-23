@@ -1,7 +1,12 @@
 ## Python-Supervisord Docker Image
 
+### Tags
+
+1. Ubuntu focal based tags: `latest`, `ubuntu-latest`, `ubuntu`, `v1.0.0`.
+2. Alpine 3.x based tags: `alpine-latest`, `alpine`, `alpine-v1.1.0`.
+
 ### Contents of the image
-This image is built on Ubuntu 20.04 and using Python 3.10 (stable release)
+This image is built on Ubuntu 20.04 (or Alpine 3.16) and using Python 3.10 (stable release)
 
 Software/Libraries included:
 - curl

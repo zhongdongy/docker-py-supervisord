@@ -24,6 +24,7 @@ jobs:
             type=raw,value=ubuntu-latest
             type=raw,value=ubuntu
             type=semver,pattern=ubuntu-{{version}}
+            type=semver,pattern={{version}}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
