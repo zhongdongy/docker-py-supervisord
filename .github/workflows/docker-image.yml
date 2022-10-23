@@ -70,14 +70,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          push: true
-          file: "./Dockerfile"
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-      - name: Build (Alpine) and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
           file: "./alpine.Dockerfile"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
