@@ -18,14 +18,14 @@ WORKDIR /app
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 RUN echo "https://mirrors.tuna.tsinghua.edu.cn/alpine/edge/main" >> /etc/apk/repositories
 RUN echo "https://mirrors.tuna.tsinghua.edu.cn/alpine/edge/testing" >> /etc/apk/repositories
-RUN apk add -U vim curl dos2unix build-base linux-headers
+RUN apk -U add vim curl dos2unix build-base linux-headers pcre-dev
 ENV LANG en_US.utf8
 
 # ==
 # 安装必要的软件
 # ==
 # 1. Python 3.10.8
-RUN apk -U add python3=3.10.8-r1 pcre-dev python3-dev=3.10.8-r1
+RUN apk -U add python3=3.10.8-r1 python3-dev=3.10.8-r1
 RUN ln -sf /usr/bin/python3 /usr/bin/python
 RUN python3 -m ensurepip
 
