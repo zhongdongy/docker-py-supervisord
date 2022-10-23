@@ -25,7 +25,7 @@ ENV LANG en_US.utf8
 # 安装必要的软件
 # ==
 # 1. Python 3.10.8
-RUN apk -U add python3=3.10.8-r1 python3-dev=3.10.8-r1
+RUN apk -U add python3=3.10.8-r1 python3-dev=3.10.8-r1 bash
 RUN ln -sf /usr/bin/python3 /usr/bin/python
 RUN python3 -m ensurepip
 
@@ -44,4 +44,4 @@ RUN mkdir -p /var/log/supervisord/
 RUN dos2unix /app/startup.sh
 RUN chmod +x /app/startup.sh
 WORKDIR /app
-ENTRYPOINT ["./startup.sh"]
+ENTRYPOINT ["/app/startup.sh"]
