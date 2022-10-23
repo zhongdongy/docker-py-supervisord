@@ -28,6 +28,7 @@ ENV LANG en_US.utf8
 RUN apk -U add python3=3.10.8-r1 python3-dev=3.10.8-r1 bash
 RUN ln -sf /usr/bin/python3 /usr/bin/python
 RUN python3 -m ensurepip
+RUN pip3 install --upgrade pip
 
 
 # 2. supervisor
@@ -43,5 +44,7 @@ COPY script/startup.sh /app/startup.sh
 RUN mkdir -p /var/log/supervisord/
 RUN dos2unix /app/startup.sh
 RUN chmod +x /app/startup.sh
+RUN file /app/startup.sh
+RUN which bash
 WORKDIR /app
-ENTRYPOINT ["/app/startup.sh"]
+CMD ["/bin/bash", "/app/startup.sh"]
