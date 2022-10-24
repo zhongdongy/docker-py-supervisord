@@ -32,11 +32,11 @@ RUN apt-get update && apt-get -y install software-properties-common
 RUN apt-get update && apt-get -y install python3.10 python3.10-distutils python3.10-dev
 RUN unlink /usr/bin/python3
 RUN ln -s /usr/bin/python3.10 /usr/bin/python3
-RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | /usr/bin/python3
 
 
 # 2. supervisor
-RUN python3 -m pip install supervisor
+RUN /usr/bin/python3 -m pip install supervisor
 RUN mkdir -p /app/_supervisor.d
 
 # ==
