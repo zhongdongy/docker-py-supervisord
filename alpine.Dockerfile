@@ -4,10 +4,10 @@
 # Author: Zhongdong Yang
 # Email: zhongdong_y@outlook.com
 # Copyright: Zhongdong Yang
-# Date: 2022-10-24
+# Date: 2022-11-29
 #
 
-FROM alpine:3.16
+FROM alpine:3.17
 USER root
 
 WORKDIR /app
