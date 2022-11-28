@@ -1,5 +1,5 @@
 #
-# 用于构建使用 Supervisord 的 Python 3.10 基础包
+# 用于构建使用 Supervisord 的 Python 3.11 基础包
 #
 # Author: Zhongdong Yang
 # Email: zhongdong_y@outlook.com
@@ -24,8 +24,8 @@ ENV LANG en_US.utf8
 # ==
 # 安装必要的软件
 # ==
-# 1. Python 3.10.8
-RUN apk -U add python3=3.10.8-r1 python3-dev=3.10.8-r1 bash
+# 1. Python 3.11.0-r2
+RUN apk -U add python3=3.11.0-r2 python3-dev=3.11.0-r2 bash
 RUN ln -sf /usr/bin/python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --upgrade pip
