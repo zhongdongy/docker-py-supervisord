@@ -24,8 +24,8 @@ ENV LANG en_US.utf8
 # ==
 # 安装必要的软件
 # ==
-# 1. Python 3.11.6-r2
-RUN apk -U add python3=3.11.6-r2 python3-dev=3.11.6-r2 bash
+# 1. Python 3.11.6-r0
+RUN apk -U add python3=3.11.6-r0 python3-dev=3.11.6-r0 bash
 RUN ln -sf /usr/bin/python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --upgrade pip
